@@ -1,0 +1,82 @@
+* {
+  outline: 0;
+  border: 0;
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  list-style: none;
+  box-sizing: inherit;
+}
+
+@font-face {
+  font-family: Roboto;
+  src: url('../fonts/Roboto-Regular.ttf') format('truetype'),
+    url('../fonts/Roboto-Medium.ttf') format('truetype'),
+    url('../fonts/Roboto-MediumItalic.ttf') format('truetype'),
+    url('../fonts/Roboto-Italic.ttf') format('truetype'),
+    url('../fonts/Roboto-Bold.ttf') format('truetype'),
+    url('../fonts/Roboto-BoldItalic.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+body,
+html {
+  background: #EEEEEE;
+  color: #333;
+  font-family: Roboto;
+  font-size: 16px;
+}
+
+input,
+textarea,
+button {
+  font-family: Roboto;
+}
+
+
+.app-title {
+  background: #FFB300;
+}
+
+.app-background {
+  border: 2px dashed #B0BEC5;
+  height: 500px;
+}
+
+.file-upload-content {
+  display: none;
+}
+
+.file-upload-input {
+  outline: none;
+  opacity: 0;
+  cursor: pointer;
+}
+
+.image-upload-wrap:hover {
+  background-color: #B0BEC5;
+}
+
+.image-title-wrap {
+  transform: translate(-20%, -110%);
+  display: none;
+}
+
+.app-background:hover .image-title-wrap {
+  display: block;
+}
+
+.remove-image {
+  width: 25px;
+  cursor: pointer;
+}
+
+#draggable {
+  width: 20px;
+  height: 20px;
+  padding: 7px 5px 5px 5px;
+  z-index: 9999;
+  position: absolute;
+  top: 0;
+}
