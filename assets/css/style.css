@@ -58,30 +58,91 @@ button {
   background-color: #B0BEC5;
 }
 
-.image-title-wrap {
-  transform: translate(-20%, -110%);
+.action-button {
   display: none;
 }
 
-.app-background:hover .image-title-wrap {
-  display: block;
+.action-button.active {
+  display: flex;
 }
 
-.remove-image {
-  width: 25px;
+.add-heart,
+.remove-background {
+  font-size: 22px;
+  color: #B0BEC5;
+  transition: all 0.2s ease-in-out;
+}
+
+.add-heart:hover,
+.remove-background:hover {
+  color: #333;
+}
+
+.heart-draggable {
+  width: 18px;
+  height: 18px;
+  padding: 2px 3px 5px 5px;
+  z-index: 9999;
+  top: 20px;
+  left: 10px;
+  position: relative;
+  outline: 1px solid #fff;
   cursor: pointer;
 }
 
-#draggable {
-  width: 20px;
-  height: 20px;
-  padding: 7px 5px 5px 5px;
-  z-index: 9999;
-  position: absolute;
-  top: 0;
-  display: none !important;
+.heart-draggable-text {
+  top: -35px;
+  left: 10px;
+  width: 150px;
+  border-radius: 7px 7px 7px 0;
+  z-index: -1;
+  opacity: 0;
+  visibility: hidden;
+  transition: all 0.2s ease-in-out;
+  transition-delay: 0.2s;
 }
 
-#draggable.active {
-  display: flex !important;
+.heart-draggable:hover .heart-draggable-text {
+  opacity: 1;
+  visibility: visible;
+}
+
+.heart-draggable-text::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  bottom: -10px;
+  width: 15px;
+  height: 15px;
+  background: #6c757d;
+  clip-path: polygon(0 0, 0% 100%, 100% 0);
+}
+
+.heart-draggable-action {
+  top: 35px;
+  right: 0;
+  border-radius: 0 7px 7px 7px;
+  z-index: -1;
+}
+
+.heart-draggable-action::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: -10px;
+  width: 15px;
+  height: 15px;
+  background: #6c757d;
+  clip-path: polygon(0 0, 0% 100%, 100% 100%);
+}
+
+.draggable-action-icon {
+  color: #eee;
+  padding: 5px 4px;
+  transition: all 0.2s ease-in-out;
+  font-size: 14px;
+}
+
+.draggable-action-icon:hover {
+  color: #fff;
 }

@@ -7,6 +7,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <link rel="stylesheet" href="assets/css/bootstrap.min.css" />
   <link rel="stylesheet" href="assets/css/jquery-ui.min.css" />
+  <link rel="stylesheet" href="assets/css/fontawesome.min.css" />
   <link rel="stylesheet" href="assets/css/style.css" />
   <title>Document</title>
 </head>
@@ -16,27 +17,30 @@
   <div class="container">
     <h3 class="app-title text-center mt-2 py-2 text-white">Creating your Living room - Scandi</h3>
 
-    <div class="app-background mt-3 position-relative" id="containment-wrapper">
+    <div class="align-items-center action-button">
+      <button type="button" class="add-heart mr-1" title="Add Heart">
+        <i class="fas fa-plus-circle"></i>
+      </button>
+      <button type="button" onclick="removeUpload()" class="remove-background" title="Remove Background">
+        <i class="far fa-times-circle"></i>
+      </button>
+    </div>
+
+    <div class="app-background mt-1 position-relative" id="containment-wrapper">
       <div class="image-upload-wrap d-flex justify-content-center align-items-center position-relative h-100">
         <input class="file-upload-input w-100 h-100 p-0 m-0 position-absolute" type='file' onchange="readURL(this);"
           accept="image/*" />
-        <h3 class="text-dark text-center px-3">Drag and drop a file or select add Image</h3>
+        <h3 class="text-dark text-center px-3 user-select-none">Drag and drop a file or select add Image</h3>
       </div>
-      <div class="file-upload-content position-absolute fixed-top w-100 h-100">
-        <div class="image-title-wrap position-absolute">
-          <button type="button" onclick="removeUpload()" class="remove-image bg-transparent">
-            <img src="assets/img/cancel.png" alt="remove" class="w-100">
-          </button>
-        </div>
-      </div>
+      <div class="file-upload-content position-absolute fixed-top w-100 h-100"></div>
 
-      <div id="draggable"
-        class="d-flex align-items-center justify-content-center bg-secondary rounded-pill border border-white">
-        <img src="assets/img/heart.png" class="w-100" alt="heart" />
-      </div>
-    </div>
+      <div class="heart-box"></div>
 
-  </div>
+
+    </div> <!-- app-background -->
+
+  </div> <!-- container -->
+
 
   <!--================== ↓ Scripts ↓ ==================-->
   <script src="assets/js/jquery-3.6.0.min.js"></script>
