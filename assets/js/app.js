@@ -10,7 +10,7 @@ let readURL = input => {
       img.classList = ('file-upload-image w-100 h-100')
       img.setAttribute('src', e.target.result);
       $('.file-upload-content').append(img)
-      console.log(img)
+      $('#draggable').addClass('active');
     };
 
     reader.readAsDataURL(input.files[0]);

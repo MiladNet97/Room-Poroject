@@ -79,4 +79,9 @@ button {
   z-index: 9999;
   position: absolute;
   top: 0;
+  display: none !important;
+}
+
+#draggable.active {
+  display: flex !important;
 }
